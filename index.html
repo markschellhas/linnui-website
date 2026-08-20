@@ -2,68 +2,435 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinnUI - UI framework for Go lang</title>
+    <title>LinnUI — Go GUI Framework | Declarative Cross-Platform UI for Go</title>
     <meta name="author" content="Mark Schellhas">
+    <meta name="description" content="LinnUI is a modern Go GUI framework with Flutter-like declarative widgets, reactive state, and Material 3 themes. Pure Go, no webviews, no cgo — cross-platform desktop, mobile, and WebAssembly. v0.3.1">
+    <meta name="keywords" content="Go GUI, Go GUI framework, GUI for Go, Go UI framework, Golang GUI, Go desktop GUI, Go cross-platform GUI, declarative UI Go, Gio UI, Flutter-like Go, SwiftUI for Go, native Go GUI, pure Go GUI, Go GUI without webview, Go WASM GUI, Material 3 Go, reactive UI Go, LinnUI, Mark Schellhas">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="application-name" content="LinnUI">
+    <meta name="theme-color" content="#FF0022">
+    <link rel="canonical" href="https://www.linnui.dev/">
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/linnui.png">
 
-    <meta name="description" content="LinnUI is a declarative UI framework for Go lang created by Mark Schellhas for Go developers.">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LinnUI">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://www.linnui.dev/">
+    <meta property="og:title" content="LinnUI — Go GUI Framework | Declarative UI for Go">
+    <meta property="og:description" content="Build beautiful cross-platform Go GUI apps with declarative widgets, reactive state, and Material 3 themes. Pure Go on Gio — no webviews, no cgo.">
+    <meta property="og:image" content="https://www.linnui.dev/linnui.png">
+    <meta property="og:image:alt" content="LinnUI — declarative Go GUI framework logo">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LinnUI — Go GUI Framework for Go">
+    <meta name="twitter:description" content="Modern declarative Go GUI framework. Flutter-like widgets, reactive state, cross-platform desktop, mobile &amp; WASM.">
+    <meta name="twitter:image" content="https://www.linnui.dev/linnui.png">
+    <meta name="twitter:image:alt" content="LinnUI Go GUI framework logo">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://www.linnui.dev/#website",
+                "url": "https://www.linnui.dev/",
+                "name": "LinnUI",
+                "description": "Official website for LinnUI, a declarative Go GUI framework.",
+                "publisher": { "@id": "https://www.linnui.dev/#organization" },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.linnui.dev/#organization",
+                "name": "LinnUI",
+                "url": "https://www.linnui.dev/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.linnui.dev/linnui.png"
+                },
+                "founder": {
+                    "@type": "Person",
+                    "name": "Mark Schellhas",
+                    "url": "https://markschellhas.com"
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://www.linnui.dev/#software",
+                "name": "LinnUI",
+                "alternateName": ["LinnUI Go GUI", "LinnUI Go GUI Framework"],
+                "applicationCategory": "DeveloperApplication",
+                "applicationSubCategory": "GUI Framework",
+                "operatingSystem": "Windows, macOS, Linux, Android, iOS, WebAssembly",
+                "softwareVersion": "0.3.1",
+                "releaseNotes": "https://github.com/markschellhas/linnui/blob/master/CHANGELOG.md",
+                "description": "LinnUI is a modern, pure-Go GUI framework inspired by Flutter, SwiftUI, and Jetpack Compose. Built on Gio for cross-platform desktop, mobile, and web applications with declarative widgets and reactive state.",
+                "url": "https://www.linnui.dev/",
+                "downloadUrl": "https://github.com/markschellhas/linnui",
+                "codeRepository": "https://github.com/markschellhas/linnui",
+                "programmingLanguage": "Go",
+                "license": "https://opensource.org/licenses/MIT",
+                "author": {
+                    "@type": "Person",
+                    "name": "Mark Schellhas",
+                    "url": "https://markschellhas.com"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "featureList": [
+                    "Flutter-like declarative widgets",
+                    "Reactive state management",
+                    "Material 3 light and dark themes",
+                    "Pure Go with GPU acceleration via Gio",
+                    "Cross-platform desktop, mobile, and WebAssembly",
+                    "No webviews and no cgo"
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.linnui.dev/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is LinnUI?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "LinnUI is a declarative Go GUI framework built on Gio. It provides Flutter-like composable widgets, reactive state, and Material 3 themes for building native cross-platform desktop, mobile, and WebAssembly applications in pure Go."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I install LinnUI?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Install the latest release with: go get github.com/markschellhas/linnui/ui@v0.3.1. Requires Go 1.26 or later."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does LinnUI use webviews?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. LinnUI is a pure Go GUI framework powered by Gio with GPU-accelerated rendering. It produces tiny static binaries without webviews or cgo."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What platforms does LinnUI support?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "LinnUI targets native desktop (Windows, macOS, Linux), mobile via Gomobile, and WebAssembly — all from a single Go codebase."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
     <style>
+        :root {
+            --brand: #FF0022;
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --muted: #555;
+            --surface: #f5f5f5;
+            --border: #e0e0e0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #111;
+                --text: #eee;
+                --muted: #aaa;
+                --surface: #1c1c1c;
+                --border: #333;
+            }
+        }
+        * { box-sizing: border-box; }
         body {
+            margin: 0;
+            font-family: "Google Sans", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        a { color: var(--brand); }
+        a:hover { opacity: 0.85; }
+        .site-header {
             text-align: center;
-            font-family: "Google Sans", sans-serif;
+            padding: 2rem 1.5rem 0;
         }
-        .headline {
-            font-family: "Google Sans", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            font-size: 5rem;
-            color: #FF0022;
-            text-transform: uppercase;
+        .site-header img {
+            max-width: 180px;
+            height: auto;
         }
-        .tagline {
-            font-family: "Google Sans", sans-serif;
+        nav.site-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        .hero {
+            text-align: center;
+            padding: 1.5rem 1.5rem 0;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
             font-weight: 400;
-            font-style: normal;
-            font-size: 2rem;
+            margin: 0.5rem 0;
         }
-        .main-content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          max-width: 600px;
-          justify-self: center;
-          text-align: left;
+        .version-badge {
+            display: inline-block;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.25rem 0.85rem;
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+        }
+        .hero-lead {
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin: 1rem auto 0;
+            max-width: 640px;
+        }
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin: 0 0 1rem;
+        }
+        .features {
+            display: grid;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .features li {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.15rem;
+        }
+        .features strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .features span {
+            color: var(--muted);
+            font-size: 0.95rem;
         }
         pre {
-            background: #f1f1f1;
-            border-radius: 15px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             padding: 1rem;
+            margin: 0;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        code { font-family: ui-monospace, "Cascadia Code", monospace; }
+        .install-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+        .copy-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.35rem 0.55rem;
+            border-radius: 8px;
+            color: var(--muted);
+            transition: background 0.15s;
+            flex-shrink: 0;
+        }
+        .copy-btn:hover { background: var(--border); }
+        .faq dt {
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .faq dd {
+            margin: 0.35rem 0 0;
+            color: var(--muted);
+        }
+        .cta-links {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .site-footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--muted);
+            padding: 0 1.5rem 2rem;
         }
     </style>
 </head>
 <body>
-    <div style="text-align: center; margin-top: 25px;">
-      <img src="/linnui.png" alt="LinnUI logo" />
-    </div>
-    <h2 class="tagline">Declarative UI framework for Go</h2>
-    <div class="main-content">
-      <p><b>LinnUI</b> is a simple library and UI framework for good-looking Go applications, created and maintained by Mark Schellhas in 2025.</p>
-      <p>
-        If you're looking for a simple, powerful, less verbose GUI for Go - this is it.<br>
-      </p>
-      <div style="text-align: center; margin-top: 25px;">
-          <div>Installation:</div>
-          <pre>go get github.com/markschellhas/linnui/ui</pre>
-      </div>
-        <p style="">
-            Contribute: <a href="https://github.com/markschellhas/linnui" alt="Link to Github repository">Github repository</a>
+    <header class="site-header">
+        <a href="/" aria-label="LinnUI home">
+            <img src="/linnui.png" alt="LinnUI — declarative Go GUI framework logo" width="180" height="180">
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+            <a href="/docs/">Documentation</a>
+            <a href="https://github.com/markschellhas/linnui">GitHub</a>
+            <a href="https://github.com/markschellhas/linnui/blob/master/CHANGELOG.md">Changelog</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Go GUI Framework — Declarative UI for Go</h1>
+        <div class="version-badge" aria-label="Current release">v0.3.1</div>
+        <p class="hero-lead">
+            LinnUI is a modern <strong>Go GUI framework</strong> for building beautiful, reactive, cross-platform applications — inspired by Flutter, SwiftUI, and Jetpack Compose, powered by <a href="https://gioui.org">Gio</a>.
         </p>
     </div>
 
-    <p style="font-size: 11px;">Copyright (c) 2025-2026 <a href="https://markschellhas.com">Mark Schellhas</a></p>
+    <main>
+        <section aria-labelledby="about-heading">
+            <h2 id="about-heading">The Go GUI library developers actually want</h2>
+            <p>
+                Go developers deserve a <strong>GUI for Go</strong> that feels modern — not a webview wrapper or a low-level drawing API.
+                LinnUI is a declarative <strong>Go UI framework</strong> with composable widgets, reactive state, and Material 3 themes.
+                Write your entire interface in pure Go and ship tiny static binaries with GPU-accelerated rendering. No cgo. No embedded browser.
+            </p>
+        </section>
+
+        <section aria-labelledby="features-heading">
+            <h2 id="features-heading">Why choose LinnUI for your Go GUI?</h2>
+            <ul class="features">
+                <li>
+                    <strong>Flutter-like declarative API</strong>
+                    <span>Composable widgets — Scaffold, Column, Row, Container — with concise, readable syntax for any Go desktop GUI.</span>
+                </li>
+                <li>
+                    <strong>Reactive state management</strong>
+                    <span>Svelte-inspired stores that automatically redraw the UI when your Go GUI state changes.</span>
+                </li>
+                <li>
+                    <strong>Material 3 themes</strong>
+                    <span>Beautiful light and dark defaults with smooth animations out of the box.</span>
+                </li>
+                <li>
+                    <strong>Pure Go, native performance</strong>
+                    <span>A true native Go GUI — no webviews, no cgo. GPU-accelerated via Gio for fast, lightweight apps.</span>
+                </li>
+                <li>
+                    <strong>True cross-platform</strong>
+                    <span>One codebase for desktop (Windows, macOS, Linux), mobile (Gomobile), and WebAssembly.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="install-heading">
+            <h2 id="install-heading">Install LinnUI v0.3.1</h2>
+            <p>Requires Go 1.26+. Linux desktop builds also need Gio system libraries.</p>
+            <div class="install-row">
+                <pre><code id="install-cmd">go get github.com/markschellhas/linnui/ui@v0.3.1</code></pre>
+                <button class="copy-btn" onclick="copyInstall(this)" title="Copy install command to clipboard" aria-label="Copy install command">&#x2398;</button>
+            </div>
+            <div class="cta-links">
+                <a href="/docs/">Read the documentation</a>
+                <a href="https://github.com/markschellhas/linnui">View on GitHub</a>
+            </div>
+        </section>
+
+        <section aria-labelledby="example-heading">
+            <h2 id="example-heading">Quick example</h2>
+            <pre><code>package main
+
+import (
+    "gioui.org/app"
+    ui "github.com/markschellhas/linnui/ui"
+)
+
+func main() {
+    count := ui.NewState(0)
+    go func() {
+        w := new(app.Window)
+        w.Option(app.Title("LinnUI Counter"))
+        count.Bind(w)
+        // ... event loop with declarative widgets
+        app.Main()
+    }()
+}</code></pre>
+            <p>See the full reactive counter demo in the <a href="https://github.com/markschellhas/linnui/tree/master/examples/counter">examples/counter</a> directory.</p>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Frequently asked questions</h2>
+            <dl>
+                <dt>What is LinnUI?</dt>
+                <dd>LinnUI is a declarative Go GUI framework built on Gio with Flutter-like widgets, reactive state, and Material 3 themes for desktop, mobile, and WASM.</dd>
+
+                <dt>How is LinnUI different from webview-based Go GUI tools?</dt>
+                <dd>LinnUI renders natively through Gio with GPU acceleration. You get real Go GUI performance and tiny binaries — not an embedded Chromium shell.</dd>
+
+                <dt>What platforms are supported?</dt>
+                <dd>Windows, macOS, Linux, mobile via Gomobile, and WebAssembly — all from a single Go codebase.</dd>
+
+                <dt>Is LinnUI production-ready?</dt>
+                <dd>LinnUI v0.3.1 is in active development. The API may change — see the <a href="https://github.com/markschellhas/linnui/blob/master/CHANGELOG.md">changelog</a> for release history. Contributions welcome.</dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Copyright &copy; 2025–2026 <a href="https://markschellhas.com">Mark Schellhas</a>. LinnUI is open source under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+    </footer>
+
+    <script>
+        function copyInstall(btn) {
+            var text = document.getElementById('install-cmd').textContent;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text);
+            } else {
+                var ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+            }
+            btn.textContent = '✓';
+            setTimeout(function() { btn.innerHTML = '&#x2398;'; }, 1500);
+        }
+    </script>
 </body>
 </html>

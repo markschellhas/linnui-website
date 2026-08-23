@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinnUI — Go GUI Framework | Declarative Cross-Platform UI for Go</title>
     <meta name="author" content="Mark Schellhas">
-    <meta name="description" content="LinnUI is a modern Go GUI framework with Flutter-like declarative widgets, reactive state, and Material 3 themes. Pure Go, no webviews, no cgo — cross-platform desktop, mobile, and WebAssembly. v0.3.1">
-    <meta name="keywords" content="Go GUI, Go GUI framework, GUI for Go, Go UI framework, Golang GUI, Go desktop GUI, Go cross-platform GUI, declarative UI Go, Gio UI, Flutter-like Go, SwiftUI for Go, native Go GUI, pure Go GUI, Go GUI without webview, Go WASM GUI, Material 3 Go, reactive UI Go, LinnUI, Mark Schellhas">
+    <meta name="description" content="LinnUI is a concise declarative Go GUI framework with reactive state, semantic light/dark themes, and practical components — buttons, forms, cards, dialogs, and snackbars. Pure Go, no webviews, no cgo. v0.4.0">
+    <meta name="keywords" content="Go GUI, Go GUI framework, GUI for Go, Go UI framework, Golang GUI, Go desktop GUI, Go cross-platform GUI, declarative UI Go, Gio UI, Flutter-like Go, SwiftUI for Go, native Go GUI, pure Go GUI, Go GUI without webview, Go WASM GUI, Go form controls, reactive UI Go, LinnUI, Mark Schellhas">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="application-name" content="LinnUI">
     <meta name="theme-color" content="#FF0022">
@@ -20,14 +20,14 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://www.linnui.dev/">
     <meta property="og:title" content="LinnUI — Go GUI Framework | Declarative UI for Go">
-    <meta property="og:description" content="Build beautiful cross-platform Go GUI apps with declarative widgets, reactive state, and Material 3 themes. Pure Go on Gio — no webviews, no cgo.">
+    <meta property="og:description" content="Build cross-platform Go GUI apps with declarative widgets, reactive state, semantic themes, and practical components. Pure Go on Gio — no webviews, no cgo. v0.4.0">
     <meta property="og:image" content="https://www.linnui.dev/linnui.png">
     <meta property="og:image:alt" content="LinnUI — declarative Go GUI framework logo">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="LinnUI — Go GUI Framework for Go">
-    <meta name="twitter:description" content="Modern declarative Go GUI framework. Flutter-like widgets, reactive state, cross-platform desktop, mobile &amp; WASM.">
+    <meta name="twitter:description" content="Concise declarative Go GUI framework. Reactive state, semantic themes, forms, overlays, desktop, mobile &amp; WASM. v0.4.0">
     <meta name="twitter:image" content="https://www.linnui.dev/linnui.png">
     <meta name="twitter:image:alt" content="LinnUI Go GUI framework logo">
 
@@ -71,9 +71,9 @@
                 "applicationCategory": "DeveloperApplication",
                 "applicationSubCategory": "GUI Framework",
                 "operatingSystem": "Windows, macOS, Linux, Android, iOS, WebAssembly",
-                "softwareVersion": "0.3.1",
+                "softwareVersion": "0.4.0",
                 "releaseNotes": "https://github.com/markschellhas/linnui/blob/master/CHANGELOG.md",
-                "description": "LinnUI is a modern, pure-Go GUI framework inspired by Flutter, SwiftUI, and Jetpack Compose. Built on Gio for cross-platform desktop, mobile, and web applications with declarative widgets and reactive state.",
+                "description": "LinnUI is a concise, declarative Go GUI framework built on Gio. It provides reactive state, semantic light and dark themes, accessible form controls, and familiar components for cross-platform desktop, mobile, and WebAssembly applications — without HTML, CSS, or JavaScript.",
                 "url": "https://www.linnui.dev/",
                 "downloadUrl": "https://github.com/markschellhas/linnui",
                 "codeRepository": "https://github.com/markschellhas/linnui",
@@ -90,9 +90,13 @@
                     "priceCurrency": "USD"
                 },
                 "featureList": [
-                    "Flutter-like declarative widgets",
-                    "Reactive state management",
-                    "Material 3 light and dark themes",
+                    "Small declarative widget API",
+                    "Reactive typed State with multi-window subscribers",
+                    "Semantic light and dark themes with runtime switching",
+                    "Form controls: TextField, Checkbox, Switch, Radio, Slider",
+                    "AppBar, Card, Dialog, Snackbar, and Scaffold overlays",
+                    "Per-window Tree state scopes",
+                    "Accessible labels, focus, and keyboard-ready controls",
                     "Pure Go with GPU acceleration via Gio",
                     "Cross-platform desktop, mobile, and WebAssembly",
                     "No webviews and no cgo"
@@ -107,7 +111,7 @@
                         "name": "What is LinnUI?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "LinnUI is a declarative Go GUI framework built on Gio. It provides Flutter-like composable widgets, reactive state, and Material 3 themes for building native cross-platform desktop, mobile, and WebAssembly applications in pure Go."
+                            "text": "LinnUI is a concise, declarative Go GUI framework built on Gio. It provides composable widgets, reactive state, semantic light and dark themes, and practical components such as forms, cards, dialogs, and snackbars for native desktop, mobile, and WebAssembly apps in pure Go."
                         }
                     },
                     {
@@ -115,7 +119,7 @@
                         "name": "How do I install LinnUI?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Install the latest release with: go get github.com/markschellhas/linnui/ui@v0.3.1. Requires Go 1.26 or later."
+                            "text": "Install the latest release with: go get github.com/markschellhas/linnui/ui@v0.4.0. Requires Go 1.26 or later."
                         }
                     },
                     {
@@ -132,6 +136,14 @@
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "LinnUI targets native desktop (Windows, macOS, Linux), mobile via Gomobile, and WebAssembly — all from a single Go codebase."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is new in LinnUI v0.4.0?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "v0.4.0 adds semantic theme-aware components, Row and Column alignment, per-window Tree state scopes, two-way TextField binding, Checkbox, Switch, Radio, Slider, AppBar, Card, Dialog, Snackbar, accessibility improvements, and a component gallery."
                         }
                     }
                 ]
@@ -245,6 +257,20 @@
             color: var(--muted);
             font-size: 0.95rem;
         }
+        .whats-new {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.15rem 1.25rem;
+        }
+        .whats-new ul {
+            margin: 0.75rem 0 0;
+            padding-left: 1.2rem;
+            color: var(--muted);
+        }
+        .whats-new li + li {
+            margin-top: 0.4rem;
+        }
         pre {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -313,9 +339,9 @@
 
     <div class="hero">
         <h1>Go GUI Framework — Declarative UI for Go</h1>
-        <div class="version-badge" aria-label="Current release">v0.3.1</div>
+        <div class="version-badge" aria-label="Current release">v0.4.0</div>
         <p class="hero-lead">
-            LinnUI is a modern <strong>Go GUI framework</strong> for building beautiful, reactive, cross-platform applications — inspired by Flutter, SwiftUI, and Jetpack Compose, powered by <a href="https://gioui.org">Gio</a>.
+            LinnUI is a concise, declarative <strong>Go GUI framework</strong> with polished defaults, reactive state, and familiar components — inspired by Flutter, SwiftUI, and Jetpack Compose, powered by <a href="https://gioui.org">Gio</a>. No HTML. No CSS. No JavaScript.
         </p>
     </div>
 
@@ -324,25 +350,50 @@
             <h2 id="about-heading">The Go GUI library developers actually want</h2>
             <p>
                 Go developers deserve a <strong>GUI for Go</strong> that feels modern — not a webview wrapper or a low-level drawing API.
-                LinnUI is a declarative <strong>Go UI framework</strong> with composable widgets, reactive state, and Material 3 themes.
+                LinnUI is a declarative <strong>Go UI framework</strong> with composable widgets, typed reactive state, and semantic light and dark themes.
                 Write your entire interface in pure Go and ship tiny static binaries with GPU-accelerated rendering. No cgo. No embedded browser.
             </p>
+        </section>
+
+        <section aria-labelledby="whats-new-heading">
+            <h2 id="whats-new-heading">What's new in v0.4.0</h2>
+            <div class="whats-new">
+                <p>The <a href="https://github.com/markschellhas/linnui/releases/tag/v0.4.0">v0.4.0 release</a> grows LinnUI from a compact widget kit into a practical app toolkit:</p>
+                <ul>
+                    <li>Semantic color palette with theme-aware components and runtime light/dark switching</li>
+                    <li>Main-axis and cross-axis alignment for <code>Row</code> and <code>Column</code></li>
+                    <li>Per-window <code>Tree</code> state scopes and multi-subscriber reactive state</li>
+                    <li>Two-way <code>TextField</code> binding plus disabled input states</li>
+                    <li>New form controls: <code>Checkbox</code>, <code>Switch</code>, <code>Radio</code>, and <code>Slider</code></li>
+                    <li>New surfaces: <code>AppBar</code>, <code>Card</code>, <code>Dialog</code>, <code>Snackbar</code>, and custom Scaffold overlays</li>
+                    <li>Accessible labels, focus and keyboard behavior, plus modal input isolation</li>
+                    <li>A component gallery and Linux CI with formatting, vet, and race tests</li>
+                </ul>
+            </div>
         </section>
 
         <section aria-labelledby="features-heading">
             <h2 id="features-heading">Why choose LinnUI for your Go GUI?</h2>
             <ul class="features">
                 <li>
-                    <strong>Flutter-like declarative API</strong>
-                    <span>Composable widgets — Scaffold, Column, Row, Container — with concise, readable syntax for any Go desktop GUI.</span>
+                    <strong>Small declarative API</strong>
+                    <span>Compose <code>Scaffold</code>, <code>Column</code>, <code>Row</code>, <code>Card</code>, and <code>Text</code> with concise, readable syntax — including main-axis and cross-axis alignment.</span>
                 </li>
                 <li>
-                    <strong>Reactive state management</strong>
-                    <span>Svelte-inspired stores that automatically redraw the UI when your Go GUI state changes.</span>
+                    <strong>Reactive, predictable state</strong>
+                    <span>Typed <code>State[T]</code> values invalidate one or more windows automatically. One <code>Tree</code> owns interaction state per window; scopes prevent ID collisions.</span>
                 </li>
                 <li>
-                    <strong>Material 3 themes</strong>
-                    <span>Beautiful light and dark defaults with smooth animations out of the box.</span>
+                    <strong>Semantic light and dark themes</strong>
+                    <span>Theme-aware colors for actions, surfaces, text, errors, and disabled states — with runtime switching, not a restyle afterthought.</span>
+                </li>
+                <li>
+                    <strong>Practical components</strong>
+                    <span>Buttons, text fields, checkboxes, switches, radios, sliders, cards, app bars, dialogs, snackbars, scrolling, and images.</span>
+                </li>
+                <li>
+                    <strong>Accessible by default</strong>
+                    <span>Semantic labels, keyboard-ready Gio controls, 48dp targets, and disabled states that actually block input.</span>
                 </li>
                 <li>
                     <strong>Pure Go, native performance</strong>
@@ -356,15 +407,16 @@
         </section>
 
         <section aria-labelledby="install-heading">
-            <h2 id="install-heading">Install LinnUI v0.3.1</h2>
+            <h2 id="install-heading">Install LinnUI v0.4.0</h2>
             <p>Requires Go 1.26+. Linux desktop builds also need Gio system libraries.</p>
             <div class="install-row">
-                <pre><code id="install-cmd">go get github.com/markschellhas/linnui/ui@v0.3.1</code></pre>
+                <pre><code id="install-cmd">go get github.com/markschellhas/linnui/ui@v0.4.0</code></pre>
                 <button class="copy-btn" onclick="copyInstall(this)" title="Copy install command to clipboard" aria-label="Copy install command">&#x2398;</button>
             </div>
             <div class="cta-links">
                 <a href="/docs/">Read the documentation</a>
                 <a href="https://github.com/markschellhas/linnui">View on GitHub</a>
+                <a href="https://github.com/markschellhas/linnui/tree/master/examples/gallery">Try the gallery</a>
             </div>
         </section>
 
@@ -373,28 +425,68 @@
             <pre><code>package main
 
 import (
+    "log"
+    "os"
+    "strconv"
+
     "gioui.org/app"
+    "gioui.org/op"
+
     ui "github.com/markschellhas/linnui/ui"
 )
 
 func main() {
-    count := ui.NewState(0)
     go func() {
         w := new(app.Window)
-        w.Option(app.Title("LinnUI Counter"))
-        count.Bind(w)
-        // ... event loop with declarative widgets
-        app.Main()
+        tree := ui.NewTree(w)
+        defer tree.Close()
+        count := ui.NewState(0).Bind(w)
+        if err := run(w, tree, count); err != nil {
+            log.Print(err)
+        }
+        os.Exit(0)
     }()
+    app.Main()
+}
+
+func run(w *app.Window, tree *ui.Tree, count *ui.State[int]) error {
+    var ops op.Ops
+    theme := ui.Light
+
+    for {
+        switch event := w.Event().(type) {
+        case app.DestroyEvent:
+            return event.Err
+        case app.FrameEvent:
+            gtx := app.NewContext(&amp;ops, event)
+            ui.Center(ui.Column([]any{
+                ui.Text("Count: "+strconv.Itoa(count.Get()), ui.Style(ui.H4)),
+                tree.Button("Increment",
+                    ui.ButtonID("increment"),
+                    ui.OnClick(func() {
+                        count.Update(func(n int) int { return n + 1 })
+                    }),
+                ),
+            }, ui.Spacing(16)))(gtx, &amp;theme)
+            event.Frame(gtx.Ops)
+        }
+    }
 }</code></pre>
-            <p>See the full reactive counter demo in the <a href="https://github.com/markschellhas/linnui/tree/master/examples/counter">examples/counter</a> directory.</p>
+            <p>
+                See the full component gallery in
+                <a href="https://github.com/markschellhas/linnui/tree/master/examples/gallery">examples/gallery</a>,
+                text binding in
+                <a href="https://github.com/markschellhas/linnui/tree/master/examples/state">examples/state</a>,
+                and runtime theme switching in
+                <a href="https://github.com/markschellhas/linnui/tree/master/examples/theme">examples/theme</a>.
+            </p>
         </section>
 
         <section class="faq" aria-labelledby="faq-heading">
             <h2 id="faq-heading">Frequently asked questions</h2>
             <dl>
                 <dt>What is LinnUI?</dt>
-                <dd>LinnUI is a declarative Go GUI framework built on Gio with Flutter-like widgets, reactive state, and Material 3 themes for desktop, mobile, and WASM.</dd>
+                <dd>LinnUI is a concise, declarative Go GUI framework built on Gio with composable widgets, reactive state, semantic light and dark themes, and practical components for desktop, mobile, and WASM.</dd>
 
                 <dt>How is LinnUI different from webview-based Go GUI tools?</dt>
                 <dd>LinnUI renders natively through Gio with GPU acceleration. You get real Go GUI performance and tiny binaries — not an embedded Chromium shell.</dd>
@@ -402,8 +494,11 @@ func main() {
                 <dt>What platforms are supported?</dt>
                 <dd>Windows, macOS, Linux, mobile via Gomobile, and WebAssembly — all from a single Go codebase.</dd>
 
+                <dt>What is new in LinnUI v0.4.0?</dt>
+                <dd>Theme-aware components, form controls, overlays, per-window <code>Tree</code> scopes, alignment, accessibility improvements, and a component gallery. See the <a href="https://github.com/markschellhas/linnui/releases/tag/v0.4.0">release notes</a>.</dd>
+
                 <dt>Is LinnUI production-ready?</dt>
-                <dd>LinnUI v0.3.1 is in active development. The API may change — see the <a href="https://github.com/markschellhas/linnui/blob/master/CHANGELOG.md">changelog</a> for release history. Contributions welcome.</dd>
+                <dd>LinnUI v0.4.0 is in early development. The API may change — see the <a href="https://github.com/markschellhas/linnui/blob/master/CHANGELOG.md">changelog</a> for release history. Contributions welcome.</dd>
             </dl>
         </section>
     </main>
